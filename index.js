@@ -80,7 +80,7 @@ async function main() {
                     }
                 );
             } catch (error) {
-                console.error("エラーが発生しました:", error.message);
+                console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
     } catch (error) {
