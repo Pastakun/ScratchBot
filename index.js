@@ -91,7 +91,7 @@ async function main() {
                     let sendcomennt = "";
                     for(let i = 0; i < datavalue.length / 5; i++){
                         
-                        sendcomennt += jsondata.targets[0].lists["+/MOgfMF3$TXO37i5ggS"][1][datavalue.substring( i * 4, i * 4 + 4 ) - 10001];
+                        sendcomennt += jsondata.targets[0].lists["+/MOgfMF3$TXO37i5ggS"][1][datavalue.substring( i * 5, i * 5 + 5 ) - 10001];
                         console.log(datavalue.substring( i * 5, i * 5 + 5 ) - 10001);
                     }
                     console.log(sendcomennt);
