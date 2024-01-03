@@ -203,7 +203,7 @@ async function main() {
             }
         });
         socket.onopen = function() {
-            socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"484994630"}), "\n"));
+            socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"946162940"}), "\n"));
         }
         socket.onmessage = function(data) {
             data.data.split("\n").forEach((function(e) {
