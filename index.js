@@ -94,6 +94,12 @@ async function main() {
             socket.send("".concat('{"method":"handshake","user":"noodle_910","project_id":"945955173"}', "\n"));
         });
         socket.on('message', (data) => {
+            data.data.split("\n").forEach((function(e) {
+                if (e) {
+                    console.log(JSON.parse(e));
+                }
+            }
+            ))
             console.log('サーバーからメッセージを受信:', data);
         });
     } catch (error) {
