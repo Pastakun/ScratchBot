@@ -100,8 +100,10 @@ async function main() {
                 }
             }
             ))
-            socket.send("".concat(JSON.stringify({"method":"set","user":"noodle_910","project_id":"484994630","name":"☁ 5","value":"1728216018502001415150412054136282799999999999999999999"}), "\n"));
         }
+        setInterval(async function(){
+            socket.send("".concat(JSON.stringify({"method":"set","user":"noodle_910","project_id":"484994630","name":"☁ 5","value":"1728216018502001415150412054136282799999999999999999999"}), "\n"));
+        }, 1000);
     } catch (error) {
         console.error("Error:", error);
     }
