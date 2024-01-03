@@ -90,12 +90,12 @@ async function main() {
                 "Cookie": `scratchsessionsid=${scratchsessionsid};`
             }
         });
-        socket.on('open', function() {
+        socket.onopen = function() {
             socket.send("".concat('{"method":"handshake","user":"noodle_910","project_id":"945955173"}', "\n"));
-        });
-        socket.on('message', function(data) {
-            console.log('サーバーからメッセージを受信:', data.split("\n"));
-        });
+        }
+        socket.onmessage = function(data) {
+            console.log('サーバーからメッセージを受信:', data);
+        }
     } catch (error) {
         console.error("Error:", error);
     }
