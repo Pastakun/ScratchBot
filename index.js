@@ -91,7 +91,7 @@ async function main() {
             }
         });
         socket.onopen = function() {
-            socket.send("".concat('{"method":"handshake","user":"noodle_910","project_id":"945955173"}', "\n"));
+            socket.send("".concat('{"method":"handshake","user":"noodle_910","project_id":"871024307"}', "\n"));
         }
         socket.onmessage = function(data) {
             data.data.split("\n").forEach((function(e) {
