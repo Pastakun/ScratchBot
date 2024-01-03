@@ -94,6 +94,7 @@ async function main() {
                     }
                     console.log(sendcomennt);
                     comments.unshift(sendcomennt);
+                    jsondata.targets[0].lists["rkUQb`d1jg!LRs1|eg?5"][1] = comments;
                 }
             }
             ))
