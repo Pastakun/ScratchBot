@@ -39,7 +39,7 @@ async function main() {
         console.log(token);
         
         const app = express()
-        const port = 8080
+        const port = 8000
         app.use((req, res, next) => {
             res.setHeader("Access-Control-Allow-Origin", "*");
             res.setHeader(
