@@ -1,5 +1,6 @@
 import axios from 'axios'
 import express from 'express'
+import ws from 'ws'
 async function main() {
     try {
         let statuscontent = "";
@@ -83,6 +84,18 @@ async function main() {
                 console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
+        const socket = new WebSocket("wss://clouddata.scratch.mit.edu", {
+            headers :{
+                "origin": "https://scratch.mit.edu",
+                "Cookie": "scratchsessionsid="+sessionid+";"
+            }
+        });
+        socket.on('open', () => {
+            socket.send("".concat('{"method":"handshake","user":"noodle_910","project_id":"945955173"}', "\n"));
+        });
+        socket.on('message', (data) => {
+            console.log('サーバーからメッセージを受信:', data);
+        });
     } catch (error) {
         console.error("Error:", error);
     }
