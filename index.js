@@ -91,7 +91,7 @@ async function main() {
             }
         });
         socket.onopen = function() {
-            socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"871024307"}), "\n"));
+            socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"484994630"}), "\n"));
         }
         socket.onmessage = function(data) {
             data.data.split("\n").forEach((function(e) {
@@ -100,7 +100,7 @@ async function main() {
                 }
             }
             ))
-            //socket.send("".concat(JSON.stringify({"method":"set","user":"noodle_910","project_id":"871024307","name":"☁ 1","value":"37564"}), "\n"));
+            socket.send("".concat(JSON.stringify({"method":"set","user":"noodle_910","project_id":"484994630","name":"☁ 5","value":"1728216018502001415150412054136282799999999999999999999"}), "\n"));
         }
     } catch (error) {
         console.error("Error:", error);
