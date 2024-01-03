@@ -80,7 +80,12 @@ async function main() {
                 console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
-        const socket = new ws("wss://clouddata.turbowarp.org/");
+        const socket = new ws("wss://clouddata.scratch.mit.edu", {
+            headers :{
+                "origin": "https://scratch.mit.edu",
+                "Cookie": `scratchsessionsid=${scratchsessionsid};`
+            }
+        });
         socket.onopen = function() {
             socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"946162940"}), "\n"));
         }
@@ -90,9 +95,7 @@ async function main() {
                     const datavalue = JSON.parse(e).value;
                     let sendcomennt = "";
                     for(let i = 0; i < datavalue.length / 5; i++){
-                        
                         sendcomennt += jsondata.targets[0].lists["+/MOgfMF3$TXO37i5ggS"][1][datavalue.substring( i * 5, i * 5 + 5 ) - 10001];
-                        console.log(datavalue.substring( i * 5, i * 5 + 5 ) - 10001);
                     }
                     console.log(sendcomennt);
                     comments.unshift(sendcomennt);
