@@ -87,7 +87,7 @@ async function main() {
         const socket = new WebSocket("wss://clouddata.scratch.mit.edu", {
             headers :{
                 "origin": "https://scratch.mit.edu",
-                "Cookie": "scratchsessionsid="+sessionid+";"
+                "Cookie": `scratchsessionsid=${scratchsessionsid};`
             }
         });
         socket.on('open', () => {
