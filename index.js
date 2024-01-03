@@ -7,7 +7,6 @@ import fs from 'fs'
 async function main() {
     try {
         const jsondata = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
-        console.log(jsondata);
         let comments = [];
         let statuscontent = "";
         const resp1 = await axios.get("https://scratch.mit.edu/csrf_token/", {
@@ -81,7 +80,7 @@ async function main() {
                 console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
-        const socket = new ws("wss://clouddata.scratch.mit.edu", {
+        const socket = new ws("wss://clouddata.turbowarp.org/", {
             headers :{
                 "origin": "https://scratch.mit.edu",
                 "Cookie": `scratchsessionsid=${scratchsessionsid};`
