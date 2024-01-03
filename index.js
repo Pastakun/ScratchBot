@@ -84,7 +84,7 @@ async function main() {
                 console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
-        const socket = new WebSocket("wss://clouddata.scratch.mit.edu", {
+        const socket = new ws("wss://clouddata.scratch.mit.edu", {
             headers :{
                 "origin": "https://scratch.mit.edu",
                 "Cookie": `scratchsessionsid=${scratchsessionsid};`
