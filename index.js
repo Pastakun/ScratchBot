@@ -80,12 +80,7 @@ async function main() {
                 console.error("エラーが発生しました:", statuscontent);
             }
         }, 8000);
-        const socket = new ws("wss://clouddata.turbowarp.org/", {
-            headers :{
-                "origin": "https://scratch.mit.edu",
-                "Cookie": `scratchsessionsid=${scratchsessionsid};`
-            }
-        });
+        const socket = new ws("wss://clouddata.turbowarp.org/");
         socket.onopen = function() {
             socket.send("".concat(JSON.stringify({"method":"handshake","user":"noodle_910","project_id":"946162940"}), "\n"));
         }
