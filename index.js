@@ -20,7 +20,7 @@ async function main() {
         const resp2 = await axios.post("https://scratch.mit.edu/login/", {
             password: process.env["password"],
             useMessages: true,
-            username: "noodle_910"
+            username: "Pasta-kun_lv6"
         }, {
             headers: {
                 'x-csrftoken': scratchcsrftoken,
