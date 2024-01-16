@@ -1,19 +1,16 @@
-import http from 'http';
-import httpProxy from 'http-proxy';
+const http = require('http');
 
-// プロキシサーバーを作成
-const proxy = httpProxy.createProxyServer({});
+http.get('http://api.ipify.org/?format=json', (res) => {
+  let data = '';
 
-// リクエストがあるたびに呼ばれるイベントハンドラーを設定
-const server = http.createServer((req, res) => {
-  console.log(`Proxying request to: ${req.url}`);
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
 
-  // リクエストをプロキシに転送
-  proxy.web(req, res, { target: req.url, changeOrigin: true });
-});
-
-// プロキシサーバーをポート3000で起動
-const PORT = 8000;
-server.listen(PORT, () => {
-  console.log(`Proxy server listening on port ${PORT}`);
+  res.on('end', () => {
+    const ip = JSON.parse(data).ip;
+    console.log('IPアドレス:', ip);
+  });
+}).on('error', (error) => {
+  console.error('IPアドレスを取得できませんでした。', error);
 });
