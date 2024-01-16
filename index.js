@@ -1,4 +1,4 @@
-const http = require('http');
+import http from 'http';
 
 http.get('http://api.ipify.org/?format=json', (res) => {
   let data = '';
