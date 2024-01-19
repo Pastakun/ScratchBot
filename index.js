@@ -6,7 +6,7 @@ import fs from 'fs'
 
 async function main() {
     try {
-        const jsondata = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
+        const jsondata = JSON.parse(fs.readFileSync('./project.json', 'utf8'));
         let comments = [];
         let statuscontent = "";
         const resp1 = await axios.get("https://scratch.mit.edu/csrf_token/", {
