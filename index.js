@@ -20,7 +20,7 @@ async function main() {
         const resp2 = await axios.post("https://scratch.mit.edu/login/", {
             password: process.env["password"],
             useMessages: true,
-            username: "Pasta-kun_lv6"
+            username: "Dream_Pasta"
         }, {
             headers: {
                 'x-csrftoken': scratchcsrftoken,
@@ -67,7 +67,7 @@ async function main() {
         setInterval(async function(){
             try {
                 const resp4 = await axios.put(
-                    "https://projects.scratch.mit.edu/953524083",
+                    "https://projects.scratch.mit.edu/955909775",
                     jsondata,
                     {
                         headers: {
